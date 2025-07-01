@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Birthday Flowers | Fleuré</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #fff; color: #333; }
+
+    .announcement-bar {
+      background: #c2185b; color: #fff; text-align: center;
+      padding: 10px; font-weight: bold;
+    }
+
+    nav {
+      background: rgba(206, 190, 168, .85); border-bottom: 1px solid #eee;
+      position: sticky; top: 0; z-index: 1000;
+    }
+    .nav-container {
+      max-width: 1200px; margin: auto; display: flex;
+      justify-content: space-between; align-items: center;
+      padding: 10px 20px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif; font-size: 1.5em; color: #c2185b;
+    }
+    .nav-links {
+      display: flex; gap: 25px; align-items: center;
+    }
+    .nav-links a {
+      font-weight: 600; color: #c2185b; text-decoration: none;
+      padding: 8px 0;
+    }
+    .nav-links a:hover { color: #e91e63; }
+
+    /* DROPDOWN */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-toggle {
+      color: #c2185b;
+      text-decoration: none;
+      padding: 8px 0;
+      display: inline-block;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 600;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+      z-index: 1;
+      border-radius: 8px;
+      padding: 10px 0;
+    }
+
+    .dropdown-content a {
+      color: #c2185b;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      font-family: inherit;   
+    }
+
+    .dropdown-content a:hover {
+      background-color: #fdf4f7;
+      color: #e91e63;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .page-header {
+      background: url('https://www.flowerwale.com/assets/vendor/images/post/zW9Gvs35Y8XrJ0F4.png') no-repeat center/cover;
+      height: 300px; display: flex; align-items: center; justify-content: center;
+      color: #fff; text-align: center;
+      position: relative;
+    }
+    .page-header::after {
+      content: ""; position: absolute; inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+    .page-header h1 {
+      position: relative; z-index: 1;
+      font-family: 'Playfair Display', serif; font-size: 3em;
+    }
+
+    .product-section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .product-grid {
+      display: flex; flex-wrap: wrap;
+      gap: 30px; justify-content: center;
+      margin-top: 30px;
+    }
+    .product-card {
+      flex: 1 1 250px;
+      background: #fdf4f7;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .product-card img {
+      width: 100%; height: 200px; object-fit: cover;
+    }
+    .product-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: #c2185b;
+      margin: 15px;
+    }
+    .product-card p {
+      color: #666;
+      margin: 0 15px 10px;
+      font-size: 0.95em;
+    }
+    .product-card .price {
+      margin: 0 15px 15px;
+      font-weight: 600;
+      color: #333;
+    }
+    .product-card button {
+      margin: 0 15px 20px;
+      padding: 10px 20px;
+      background: #ff8364;
+      border: none;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+    .product-card button:hover {
+      background: #ff5c3d;
+    }
+
+    footer {
+      background: #fff;
+      padding: 40px 20px;
+    }
+    .footer-inner {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+    footer h3 {
+      font-family: 'Playfair Display', serif;
+      color: #c2185b;
+    }
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+    footer ul li a {
+      color: #c2185b;
+      text-decoration: none;
+    }
+    footer p {
+      color: #666;
+    }
+    .footer-bottom {
+      text-align: center;
+      color: #999;
+      font-size: 0.9em;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .page-header h1 { font-size: 2.2em; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announcement-bar">
+    💐 Celebrate Mum's unconditional love with blooms from the heart
+  </div>
+
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo">Fleuré</div>
+      <div class="nav-links">
+        <a href="Flowers.html">Flowers</a>
+
+        <!-- SALE dropdown -->
+        <div class="dropdown">
+          <a href="Sale.html" class="dropdown-toggle">Sale</a>
+          <div class="dropdown-content">
+            <a href="7-7 sale.html">7.7 Sale</a>
+            <a href="Merdeka.html">Merdeka Sale</a>
+            <a href="Payday.html">Payday Sale</a>
+          </div>
+        </div>
+
+        <a href="special.html">Special</a>
+
+        <!-- OCCASION dropdown -->
+        <div class="dropdown">
+          <a href="Occasion.html" class="dropdown-toggle">Occasion</a>
+          <div class="dropdown-content">
+            <a href="birthday.html">Birthday</a>
+            <a href="anniversary.html">Anniversary</a>
+            <a href="graduation.html">Graduation</a>
+            <a href="mother.html">Mother’s Day</a>
+          </div>
+        </div>
+
+        <a href="Location.html">Location</a>
+        <a class="button" href="Order.html">Order</a>
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>Mother's Day Flowers</h1>
+  </div>
+
+  <div class="product-section">
+    <p style="text-align: center; color: #666; font-size: 1.1em;">
+      Show mum your love with floral hugs she’ll never forget 🌸
+    </p>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://www.coolpetals.com/cdn/shop/files/msg-648922712-341849.jpg" alt="Blushing Thanks">
+        <h3>Blushing Thanks</h3>
+        <p>Pink tulips & white fillers – gentle appreciation for her love.</p>
+        <p class="price">RM128.00</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://bambooflorist.com.my/cdn/shop/files/EtherealLavender.jpg" alt="Graceful Mum">
+        <h3>Graceful Mum</h3>
+        <p>Elegant carnations with pastel roses in a soft elegant wrap.</p>
+        <p class="price">RM145.00</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://cdn1.sgliteasset.com/GreenPlantSociety/images/texteditor/OyVA9dcK66124abd3c059_1712474813_1713944214.jpg" alt="Floral Embrace">
+        <h3>Floral Embrace</h3>
+        <p>A warm bundle of love in every bloom – carnation & baby's breathe combo.</p>
+        <p class="price">RM158.00</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Peony</a></li>
+          <li><a href="Occasion.html">Occasions</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>
+          Email: hello@lwgf.com<br>
+          Phone: +6012-345-6789<br>
+          Instagram: @fleur.mty
+        </p>
+      </div>
+    </div>
+    <p class="footer-bottom">© 2025 Fleuré All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flower Types</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      background-color: #fff;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #fafafa;
+      border-right: 1px solid #ddd;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      font-size: 17px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .flower-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .flower-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      font-size: 14px;
+      color: #333;
+      cursor: pointer;
+      border-bottom: 1px solid #eee;
+      transition: background 0.2s ease;
+    }
+
+    .flower-list li span:last-child {
+      color: #888;
+      font-size: 12px;
+    }
+
+    .flower-list li:hover {
+      background-color: #f7f7f7;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 25px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+
+    .product-card {
+      border: 1px solid #eee;
+      padding: 10px;
+      background-color: #fff;
+      text-align: center;
+      border-radius: 8px;
+      transition: 0.3s ease;
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 5px;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card img:hover {
+      transform: scale(1.05);
+    }
+
+    .product-name {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 3px 8px;
+      background-color: #fcd9c5;
+      color: #a54c25;
+      font-size: 11px;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+
+    .badge.new {
+      background-color: #ffe9f0;
+      color: #d63384;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Flower</h2>
+    <ul class="flower-list">
+      <li onclick="filterProducts('all')"><span>All</span></li>
+      <li onclick="filterProducts('Baby\'s Breath')"><span>Baby's Breath</span><span>(6)</span></li>
+      <li onclick="filterProducts('Rose')"><span>Rose</span><span>(6)</span></li>
+      <li onclick="filterProducts('Carnation')"><span>Carnation</span><span>(6)</span></li>
+      <li onclick="filterProducts('Eustoma')"><span>Eustoma</span><span>(6)</span></li>
+      <li onclick="filterProducts('Gerbera')"><span>Gerbera</span><span>(6)</span></li>
+      <li onclick="filterProducts('Hydrangea')"><span>Hydrangea</span><span>(6)</span></li>
+      <li onclick="filterProducts('Lily')"><span>Lily</span><span>(6)</span></li>
+      <li onclick="filterProducts('Matthiola')"><span>Matthiola</span><span>(4)</span></li>
+      <li onclick="filterProducts('Orchid')"><span>Orchid</span><span>(3)</span></li>
+      <li onclick="filterProducts('Alstroemeria')"><span>Alstroemeria</span><span>(2)</span></li>
+      <li onclick="filterProducts('Sunflower')"><span>Sunflower</span><span>(4)</span></li>
+       <li onclick="filterProducts('Chrysanthemum')"><span>Chrysanthemum</span><span>(1)</span></li>
+       <li onclick="filterProducts('Tulip')"><span>Tulip</span><span>(4)</span></li>
+       <li onclick="filterProducts('Anthurium')"><span>Anthurium</span><span>(2)</span></li>
+       <li onclick="filterProducts('Statice')"><span>Statice</span><span>(6)</span></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+
+    <!-- Baby's Breath grid -->
+    <div class="product-grid">
+      <div class="product-card" data-category="Baby's Breath">
+        <img src="Lavender Baby Breath.png" alt="Lavender Baby Breath">
+        <div class="badge new">New</div>
+        <div class="product-name">Lavender Baby Breath</div>
+      </div>
+
+      <div class="product-card" data-category="Baby's Breath">
+        <img src="Colourful Baby Breath.jpg" alt="Colourful Baby Breath">
+        <div class="badge">Limited</div>
+        <div class="product-name">Colourful Baby Breath</div>
+      </div>
+
+      <div class="product-card" data-category="Baby's Breath">
+        <img src="Pink Baby Breath.jpg" alt="Pink Baby Breath">
+        <div class="badge">Limited</div>
+        <div class="product-name">Pink Baby Breath</div>
+      </div>
+
+      <div class="product-card" data-category="Baby's Breath">
+        <img src="Janice Baby Breath.webp" alt="Janice Baby Breath">
+        <div class="badge">Limited</div>
+        <div class="product-name">Janice Baby Breath</div>
+      </div>
+
+      <div class="product-card" data-category="Baby's Breath">
+        <img src="Harper White Baby Breath.webp" alt="Harper White Baby Breath">
+        <div class="badge">Limited</div>
+        <div class="product-name">Harper White Baby Breath</div>
+      </div>
+
+      <div class="product-card" data-category="Baby's Breath">
+        <img src="Blue Baby Breath.jpg" alt="Blue Baby Breath">
+        <div class="badge">Limited</div>
+        <div class="product-name">Blue Baby Breath</div>
+      </div>
+    </div>
+
+    <!-- Rose grid -->
+    <div class="product-grid">
+      <div class="product-card" data-category="Rose">
+        <img src="Ashley Red Rose.webp" alt="Ashley Red Rose">
+        <div class="badge">Bestseller</div>
+        <div class="product-name">Ashley Red Rose</div>
+      </div>
+
+      <div class="product-card" data-category="Rose">
+        <img src="https://bloomthis.co/cdn/shop/files/bloomthis-bouquet-beatrice-rose-lily-bouquet-1080x1080-01.jpg?v=1743038737&width=700" alt="Beatrice Rose Lily">
+        <div class="badge">Bestseller</div>
+        <div class="product-name">Beatrice Rose Lily</div>
+      </div>
+
+      <div class="product-card" data-category="Rose">
+        <img src="https://bloomthis.co/cdn/shop/products/bloomthis-bouquet-rachel-red-rose-bouquet-1080x1080-01.jpg?v=1664947085&width=600" alt="Rachel Red Rose">
+        <div class="badge">Bestseller</div>
+        <div class="product-name">Rachel Red Rose</div>
+      </div>
+
+      <div class="product-card" data-category="Rose">
+        <img src="Blush Rose.jpg" alt="Blush Rose">
+        <div class="badge">Bestseller</div>
+        <div class="product-name">Blush Rose</div>
+      </div>
+
+      <div class="product-card" data-category="Rose">
+        <img src="Blue Rose.webp" alt="Blue Rose">
+        <div class="badge">Bestseller</div>
+        <div class="product-name">Blue Rose</div>
+      </div>
+
+      <div class="product-card" data-category="Rose">
+        <img src="Purple Rose.webp" alt="Purple Rose">
+        <div class="badge">Bestseller</div>
+        <div class="product-name">Purple Rose</div>
+      </div>
+    </div>
+
+    <!-- Carnation grid -->
+    <div class="product-grid">
+      <div class="product-card" data-category="Carnation">
+        <img src="https://bloomthis.co/cdn/shop/files/bloomthis-bouquet-mimmie-pink-carnation-bouquet-1080x1080-01.jpg?v=1743038933&width=600" alt="Mimmie Pink Carnation">
+        <div class="badge">Bestseller</div>
+        <div class="product-name">Mimmie Pink Carnation</div>
+      </div>
+
+      <div class="product-card" data-category="Carnation">
+        <img src="Mischa Pink Carnation.webp" alt="Mischa Pink Carnation">
+        <div class="badge">Bestseller</div>
+        <div class="product-name">Mischa Pink Carnation</div>
+      </div>
+
+      <div class="product-card" data-category="Carnation">
+        <img src=https://bloomthis.co/cdn/shop/products/bloomthis-bouquet-maryane-red-carnation-bouquet-1080x1080-04.jpg?v=1680684285&width=600alt="Maryane Red Carnation">
+        <div class="badge">Bestseller</div>
+        <div class="product-name">Maryane Red Carnation</div>
+      </div>
+
+      <div class="product-card" data-category="Carnation">
+        <img src="Adora Peach Carnation.jpg" alt="Adora Peach Carnation">
+        <div class="badge">Bestseller</div>
+        <div class="product-name">Adora Peach Carnation</div>
+      </div>
+
+    <div class="product-card" data-category="Carnation">
+        <img src="Purple Carnation.webp" alt="Purple Carnation">
+        <div class="badge">Bestseller</div>
+        <div class="product-name">Purple Carnation</div>
+      </div>
+
+    <div class="product-card" data-category="Carnation">
+        <img src="Classic Carnation.jpg" alt="Classic Carnation">
+        <div class="badge">Bestseller</div>
+        <div class="product-name">Classic Carnation</div>
+      </div>  
+    </div>
+
+  <!-- Eustoma grid -->
+<div class="product-grid">
+  <div class="product-card" data-category="Eustoma">
+    <img src="Purple Eustoma.jpg" alt="Purple Eustoma">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Purple Eustoma</div>
+  </div>
+
+  <div class="product-card" data-category="Eustoma">
+    <img src="Red Eustoma.webp" alt="Red Eustoma">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Red Eustoma</div>
+  </div>
+
+  <div class="product-card" data-category="Eustoma">
+    <img src="Mini Eustoma.webp" alt="Mini Eustoma">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Mini Eustoma</div>
+  </div>
+
+  <div class="product-card" data-category="Eustoma">
+    <img src="Chic Blush Eustoma.webp" alt="Chic Blush Eustoma">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Chich Blush Eustoma</div>
+  </div>
+
+  <div class="product-card" data-category="Eustoma">
+    <img src="https://gift.succulent.my/wp-content/uploads/2024/11/Product-24.jpg" alt="Green Ball & White Eustoma">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Green Ball & White Eustoma</div>
+  </div>
+
+  <div class="product-card" data-category="Eustoma">
+    <img src="Beige Eustoma.webp" alt="Beige Eustoma">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Beige Eustoma</div>
+  </div>
+</div> 
+
+<!-- Gerbera grid -->
+<div class="product-grid">
+  <div class="product-card" data-category="Gerbera">
+    <img src="https://bloomthis.co/cdn/shop/products/bloomthis-bouquet-sylvie-gerbera-bouquet-1080x1080-03.jpg?v=1608280887&width=600" alt="Sylvie Gerbera">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Sylvie Gerbera</div>
+  </div>
+
+  <div class="product-card" data-category="Gerbera">
+    <img src="https://bloomthis.co/cdn/shop/products/bloomthis-bouquet-freye-gerbera-rose-bouquet-1080x1080-08.jpg?v=1708659926&width=600" alt="Freye Gerbera">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Freye Gerbera</div>
+  </div>
+
+  <div class="product-card" data-category="Gerbera">
+    <img src="https://bloomthis.co/cdn/shop/products/bloomthis-flower-stand-tally-white-gerbera-condolence-flower-stand-1200x800-02.jpg?v=1636455490&width=600" alt="Tally White Gerbera">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Tally White Gerbera</div>
+  </div>
+
+   <div class="product-card" data-category="Gerbera">
+    <img src="https://hugandheart.com.my/cdn/shop/files/HNH0183-B.jpg?v=1722385167" alt="Cherish Gerbera">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Cherish Gerbera</div>
+  </div>
+
+  <div class="product-card" data-category="Gerbera">
+    <img src="https://fleurwonderlandsg.com/cdn/shop/products/6FBE0D5D-A264-4671-8D72-4D52377254E5_1024x1024@2x.jpg?v=1598897443" alt="Petit Preserved Yellow Gerbera">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Petit Preserved Yellow Gerbera</div>
+  </div>
+
+  <div class="product-card" data-category="Gerbera">
+    <img src="https://assets.winni.in/c_limit,dpr_1,fl_progressive,q_80,w_600/49712_shineshine-yellow-gerbera-bouquet.jpeg" alt="Shineshine Yellow Gerbera">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Shineshine Yellow Gerbera</div>
+  </div>
+</div>
+
+<!-- Hydrangea grid -->
+<div class="product-grid">
+  <div class="product-card" data-category="Hydrangea">
+    <img src="https://grannydoris.my/cdn/shop/products/Tomorrow-HydrangeaBouquet.jpg?v=1636460918&width=600" alt="Blue Hydrangea">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Blue Hydrangea</div>
+  </div>
+
+  <div class="product-card" data-category="Hydrangea">
+    <img src="https://www.floristika.com.my/cdn/shop/files/PD72.png?v=1721146252" alt="Purple Hydrangea">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Purple Hydrangea</div>
+  </div>
+
+  <div class="product-card" data-category="Hydrangea">
+    <img src="https://onlyloveflorist.com/5934-thickbox_default/hgb004-hydrangea-bouquet.jpg" alt="Pink Hydrangea">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Pink Hydrangea</div>
+  </div>
+
+  <div class="product-card" data-category="Hydrangea">
+    <img src="https://februarybloom.com/cdn/shop/files/115.png?v=1722789632" alt="Macaire Hydrangea">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Macaire Hydrangea</div>
+  </div>
+
+  <div class="product-card" data-category="Hydrangea">
+    <img src="https://bloomthis.co/cdn/shop/products/bloomthis-hat-box-erica-hydrangea-rose-flower-box-1080x1080-04.jpg?v=1675159494&width=600" alt="Erica Hydrangea">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Erica Hydrangea</div>
+  </div>
+
+  <div class="product-card" data-category="Hydrangea">
+    <img src="https://bloomthis.co/cdn/shop/files/bloomthis-bouquet-boujee-blue-hydrangea-bouquet-1080x1350-03.jpg?v=1717559161&width=600" alt="Boujee Blue Hydrangea"> 
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Boujee Blue Hydrangea</div>
+  </div>
+</div>
+
+<!-- Lily grid -->
+<div class="product-grid">
+  <div class="product-card" data-category="Lily">
+    <img src="https://bloomthis.co/cdn/shop/products/bloomthis-bouquet-annabeth-pink-lily-bouquet-1080x1080-07.jpg?v=1708659274&width=600" alt="Annabeth Pink Lily">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Annabeth Pink Lily</div>
+  </div>
+
+  <div class="product-card" data-category="Lily">
+    <img src="https://bloomthis.co/cdn/shop/products/bloomthis-bouquet-bernadette-white-lily-bouquet-1080x1080-02_135516c9-5e50-48d7-921e-a6b040453ed7.jpg?v=1645455208&width=600" alt="Bernadette White Lily">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Bernadette White Lily</div>
+  </div>
+
+ <div class="product-card" data-category="Lily">
+    <img src="https://www.wenghoa.com/wp-content/uploads/2024/03/3-28.jpg" alt="Purple Lily">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Purple Lily</div>
+  </div>
+
+ <div class="product-card" data-category="Lily">
+    <img src="https://bloomthis.co/cdn/shop/files/bloomthis-bouquet-beatrice-rose-lily-bouquet-1080x1080-06.jpg?v=1743038737&width=600" alt="Beatrice Rose Lily">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Beatrice Rose Lily</div>
+  </div>
+
+ <div class="product-card" data-category="Lily">
+    <img src="https://bloomthis.co/cdn/shop/products/bloomthis-hat-box-yara-gerbera-lily-flower-box-1080x1080-04.jpg?v=1675853185&width=600" alt="Yara Gerbera Lily">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Yara Gerbera Lily</div>
+  </div>
+
+ <div class="product-card" data-category="Lily">
+    <img src="https://bloomthis.co/cdn/shop/files/bloomthis-bloombag-mini-marissa-white-lily-mini-bloombag-rebloom-vase-1080x1350-04.jpg?v=1738745407&width=600" alt="Marissa White Lily">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Marissa White Lily</div>
+  </div>
+</div>
+
+<!-- Matthiola grid -->
+<div class="product-grid">
+  <div class="product-card" data-category="Matthiola">
+    <img src="https://www.christabellaflorists.com/wp-content/uploads/2023/09/5-Mix-flower--scaled.jpg" alt="Purple Matthiola">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Purple Matthiola</div>
+  </div>
+
+  <div class="product-card" data-category="Matthiola">
+    <img src="https://theflorte.com/cdn/shop/files/MARKETBUNDLE_WHITEMATTIOLA.jpg?v=1688456422&width=600" alt="White Matthiola">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">White Matthiola</div>
+  </div>
+
+  <div class="product-card" data-category="Matthiola">
+    <img src="https://fluffyflower.eu/cdn/shop/files/IMG_8117.heic?v=1732235216&width=3024" alt="StoX Yellow Matthiola">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">StoX Yellow Matthiola</div>
+  </div>
+
+ <div class="product-card" data-category="Matthiola">
+    <img src="https://brielleflowerstudio.com.sg/cdn/shop/products/3_c5e30e75-952e-4359-af3a-84a46dcbd903_1100x.jpg?v=1708486620" alt="Noble Matthiola">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Noble Matthiola</div>
+  </div>
+</div>
+
+<!-- Orchid grid -->
+ <div class="product-grid">
+  <div class="product-card" data-category="Orchid">
+    <img src="https://bloomthis.co/cdn/shop/products/bloomthis-vase-raquel-1080x1080-04.jpg?v=1586936489&width=600" alt="Raquel Orchid">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Raquel Orchid</div>
+  </div>
+
+  <div class="product-card" data-category="Orchid">
+    <img src="https://bloomthis.co/cdn/shop/products/bloomthis-vase-lola-1080x1080-01.jpg?v=1586936484&width=600" alt="Lola Orchid">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Lola Orchid</div>
+  </div>
+
+  <div class="product-card" data-category="Orchid">
+    <img src="https://bloomthis.co/cdn/shop/products/bloomthis-vase-elise-1080x1080-02.jpg?v=1586936469&width=600" alt="Elise Orchid">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Elise Orchid</div>
+  </div>
+</div>
+
+<!-- Alstroemeria grid -->
+ <div class="product-grid">
+  <div class="product-card" data-category="Alstroemeria">
+    <img src="https://assets.eflorist.com/site/48185077/assets/products/EZM_/sku7170932.jpg?impolicy=hero" alt="Orange Alstroemeria">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Orange Alstroemeria</div>
+  </div>
+
+ <div class="product-card" data-category="Alstroemeria">
+    <img src="https://www.salamagreenhouse.com/cdn/shop/products/1680x1050_1024x1024.jpg?v=1391039793" alt="Pinkish Alstroemeria">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Pinkish Alstroemeria</div>
+  </div>
+</div>
+
+ <!-- Sunflower grid -->
+ <div class="product-grid">
+  <div class="product-card" data-category="Sunflower">
+    <img src="https://bloomthis.co/cdn/shop/products/bloomthis-bouquet-gabby-sunflower-bouquet-1080x1080-05.jpg?v=1708660127&width=600" alt="Gabby Sunflower">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Gabby Sunflower</div>
+  </div>
+
+ <div class="product-card" data-category="Sunflower">
+    <img src="https://bloomthis.co/cdn/shop/products/bloomthis-bouquet-calypso-sunflower-rose-bouquet-1080x1080-07.jpg?v=1708659939&width=600" alt="Calypso Sunflower">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Calypso Sunflower</div>
+  </div>
+
+ <div class="product-card" data-category="Sunflower">
+    <img src="https://bloomthis.co/cdn/shop/products/bloomthis-bouquet-sadie-black-1080x1080-02.jpg?v=1571562322&width=600" alt="Sadie Black Sunflower">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Sadie Black Sunflower</div>
+  </div>
+
+<div class="product-card" data-category="Sunflower">
+    <img src="https://bloomthis.co/cdn/shop/products/bloomthis-bouquet-julia-white-1080x1080-06.jpg?v=1571562321&width=600" alt="Julie White Sunflower">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Julie White Sunflower</div>
+  </div>
+</div>
+
+ <!-- Chrysanthemum grid -->
+ <div class="product-grid">
+  <div class="product-card" data-category="Chrysanthemum">
+    <img src="https://cdn.shopify.com/s/files/1/0781/4423/files/bloomthis-flower-chrysanthemum-usp-01-joyful-chrysanthemum-hand-bouquets.jpg?v=1691381253&width=1080" alt="Angelic Chrysanthemum">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Angelic Chrysanthemum</div>
+  </div>
+</div>
+
+ <!-- Tulip grid -->
+ <div class="product-grid">
+  <div class="product-card" data-category="Tulip">
+    <img src="https://bloomthis.co/cdn/shop/products/bloomthis-bouquet-constance-1080x1080-04.jpg?v=1598857372&width=600" alt="Constance Tulip">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Constance Tulip</div>
+  </div>
+
+  <div class="product-card" data-category="Tulip">
+    <img src="https://bloomthis.co/cdn/shop/products/bloomthis-bouquet-kirsten-1080x1080-04.jpg?v=1598857378&width=600" alt="Kristen Orange Tulip">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Kristen Orange Tulip</div>
+  </div>
+
+ <div class="product-card" data-category="Tulip">
+    <img src="https://bloomthis.co/cdn/shop/files/bloomthis-mini-bloombag-mirae-pink-tulip-mini-bloombag-1080x1350-03-vase.jpg?v=1749451758&width=600" alt="Mirae Pink Mini Tulip">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Mirae Pink Mini Tulip</div>
+  </div>
+
+<div class="product-card" data-category="Tulip">
+    <img src="https://bloomthis.co/cdn/shop/files/bloomthis-bouquet-real-talk-pink-tulip-bouquet-1080x1350-03.jpg?v=1717600269&width=600" alt="Real Talk Pink Tulip">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Real Talk Pink Tulip</div>
+  </div>
+</div>
+
+<!-- Anthuarium grid -->
+ <div class="product-grid">
+  <div class="product-card" data-category="Anthuarium">
+    <img src="https://bloomthis.co/cdn/shop/files/bloomthis-bloombag-mini-carissima-anthurium-mini-bloombag-rebloom-vase-1080x1350-01-bag.jpg?v=1749827615&width=600" alt="Carissima Anthuarium Mini">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Carissima Anthuarium Mini</div>
+  </div>
+
+  <div class="product-card" data-category="Anthuarium">
+    <img src="https://bloomthis.co/cdn/shop/files/bloomthis-hat-box-euphemia-rose-anthurium-flower-box-1080x1080-04.jpg?v=1701320877&width=600" alt="Euphemia Anthuarium">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Euphemia Anthuarium</div>
+  </div>
+</div>
+
+<!-- Statice grid -->
+ <div class="product-grid">
+  <div class="product-card" data-category="Statice">
+    <img src="https://bloomthis.co/cdn/shop/products/bloomthis-bouquet-sonia-statice-caspia-bouquet-1080x1080-01.jpg?v=1608280921&width=600" alt="Sonia Statice">
+    <div class="badge">Bestseller</div>
+    <div class="product-name">Sonia Statice</div>
+  </div>
+</div>
+
+  <script>
+    function filterProducts(category) {
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => {
+        const productCategory = card.getAttribute('data-category');
+        if (category === 'all' || productCategory === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

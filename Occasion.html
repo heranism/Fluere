@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Occasion | Fleuré</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #fff; color: #333; }
+
+    .announcement-bar {
+      background: #c2185b; color: #fff; text-align: center;
+      padding: 10px; font-weight: bold;
+    }
+
+    nav {
+      background: rgba(206, 190, 168, .85); border-bottom: 1px solid #eee;
+      position: sticky; top: 0; z-index: 1000;
+    }
+    .nav-container {
+      max-width: 1200px; margin: auto; display: flex;
+      justify-content: space-between; align-items: center;
+      padding: 10px 20px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif; font-size: 1.5em; color: #c2185b;
+    }
+    .nav-links {
+      display: flex; gap: 25px; align-items: center;
+    }
+    .nav-links a {
+      font-weight: 600; color: #c2185b; text-decoration: none;
+      padding: 8px 0; position: relative;
+    }
+    .nav-links a:hover { color: #e91e63; }
+
+    /* DROPDOWN */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-toggle {
+      color: #c2185b;
+      text-decoration: none;
+      padding: 8px 0;
+      display: inline-block;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 600;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+      z-index: 1;
+      border-radius: 8px;
+      padding: 10px 0;
+    }
+
+    .dropdown-content a {
+      color: #c2185b;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      font-family: inherit;   
+    }
+
+    .dropdown-content a:hover {
+      background-color: #fdf4f7;
+      color: #e91e63;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .page-header {
+      background: url('https://www.flowerwale.com/assets/vendor/images/post/zW9Gvs35Y8XrJ0F4.png') no-repeat center/cover;
+      height: 300px; display: flex; align-items: center; justify-content: center;
+      color: #fff; text-align: center;
+      position: relative;
+    }
+    .page-header::after {
+      content: ""; position: absolute; inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+    .page-header h1 {
+      position: relative; z-index: 1;
+      font-family: 'Playfair Display', serif; font-size: 3em;
+    }
+
+    .occasion-section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .occasion-grid {
+      display: flex; flex-wrap: wrap;
+      gap: 30px; justify-content: center;
+      margin-top: 30px;
+    }
+    .occasion-card {
+      flex: 1 1 250px;
+      background: #fdf4f7;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    .occasion-card:hover {
+      transform: translateY(-5px);
+    }
+    .occasion-card img {
+      width: 100%; height: 200px; object-fit: cover;
+    }
+    .occasion-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: #c2185b;
+      margin: 15px;
+    }
+    .occasion-card p {
+      color: #666;
+      margin: 0 15px 20px;
+    }
+
+    footer {
+      padding: 40px 20px;
+      background: #fff;
+    }
+    footer h3 {
+      font-family: 'Playfair Display', serif;
+      color: #c2185b;
+    }
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+    footer ul li a {
+      color: #c2185b;
+      text-decoration: none;
+    }
+    footer p {
+      color: #666;
+    }
+    footer .footer-inner {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+    .footer-bottom {
+      text-align: center;
+      color: #999;
+      font-size: 0.9em;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .page-header h1 { font-size: 2.2em; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announcement-bar">
+    🎉 Free card & photo + same-day delivery
+  </div>
+
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo">Fleuré</div>
+      <div class="nav-links">
+        <a href="Flowers.html">Flowers</a>
+
+        <div class="dropdown">
+          <a href="Sale.html" class="dropdown-toggle">Sale</a>
+          <div class="dropdown-content">
+            <a href="7-7 sale.html">7.7 Sale</a>
+            <a class="button" href="Merdeka.html">Merdeka Sale</a>
+            <a class="button" href="Payday.html">Payday Sale</a>
+          </div>
+        </div>
+
+        <a class="button" href="Special.html">Special</a>
+
+        <div class="dropdown">
+          <a href="Occasion.html" class="dropdown-toggle">Occasion</a>
+          <div class="dropdown-content">
+            <a href="birthday.html">Birthday</a>
+            <a href="anniversary.html">Anniversary</a>
+            <a href="graduation.html">Graduation</a>
+            <a href="mother.html">Mother’s Day</a>
+          </div>
+        </div>
+
+        <a class="button" href="Location.html">Location</a>
+        <a class="button" href="Order.html">Order</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>Celebrate Every Occasion</h1>
+  </div>
+
+  <div class="occasion-section">
+    <p style="text-align: center; color: #666; font-size: 1.1em;">
+      Find the perfect arrangement for every milestone and memory — crafted with love by Fleuré.
+    </p>
+    <div class="occasion-grid">
+      <div class="occasion-card">
+        <img src="https://50gram.com.my/wp-content/uploads/2025/06/Neutral-Muse-Large-1.jpg" alt="Birthday">
+        <h3>Birthday Blossoms</h3>
+        <p>Bright blooms to make someone’s special day unforgettable.</p>
+      </div>
+      <div class="occasion-card">
+        <img src="https://www.littlereddotflorist.sg/wp-content/uploads/2023/11/99-Roses-Red-and-Pink-Singapore-Florist-550x550.jpg" alt="Anniversary">
+        <h3>Anniversary</h3>
+        <p>Celebrate love with timeless floral arrangements that say “I still do.”</p>
+      </div>
+      <div class="occasion-card">
+        <img src="https://i.pinimg.com/originals/94/b3/5c/94b35c3e78af5ee9221d7d16b57f0ed5.jpg" alt="Graduation">
+        <h3>Graduation</h3>
+        <p>Cheers to new beginnings with congratulatory bouquets full of pride.</p>
+      </div>
+      <div class="occasion-card">
+        <img src="https://neroliblume.com/cdn/shop/files/flowers-mother-day.jpg?v=1740464024" alt="Mother's day">
+        <h3>Mother's day</h3>
+        <p>Show your love and appreciation with thoughtful blooms for mom.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner"></div>
+    <p class="footer-bottom">© 2025 Fleuré All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

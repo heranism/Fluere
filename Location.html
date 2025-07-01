@@ -1,0 +1,124 @@
+<!-- LOCATION SECTION -->
+<section class="location-section" id="location">
+  <div class="location-header">
+    <h2 class="section-title">🌸 Shop by Location 🌸</h2>
+    <p class="section-subtitle">Delivering fresh blooms right to your doorstep in KL, Selangor & Penang</p>
+  </div>
+  <div class="location-grid">
+    <!-- KL & Selangor -->
+    <div class="location-box">
+      <img src="https://my.tiketmasuk.com/wp-content/uploads/2024/03/Kedai-Bunga-Terbaik-di-Kuala-Lumpur.webp" alt="KL & Selangor" class="location-img">
+      <h3>KL & Selangor</h3>
+      <ul>
+        <a href="Flowers.html" class="btn">Flowers</a>
+        <p><a href="Sale.html" class="btn">Sale</a>
+	<p><a href="Special.html" class="btn">Special</a>
+	<p>      <a href="Occasion.html">Occasions</a></li>
+      </ul>
+    </div>
+
+    <!-- Penang -->
+    <div class="location-box">
+      <img src="https://www.utusanborneo.com.my/sites/default/files/images/article/20230206/sbw-ub060223-ba-bunga-p1a.jpg" alt="Penang" class="location-img">
+      <h3>Penang</h3>
+      <ul>
+	<a href="Flowers.html" class="btn">Flowers</a>
+	<p><a href="Sale.html" class="btn">Sale</a>
+	<p><a href="Special.html" class="btn">Special</a>
+	<p>        <a href="Occasion.html">Occasions</a></li>
+
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION CSS STYLE -->
+<style>
+  .location-section {
+    background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  .location-header {
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-size: 2.5em;
+    color: #c2185b;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .section-subtitle {
+    font-size: 1.2em;
+    color: #666;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .location-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .location-box {
+    background: #fff;
+    border: 2px solid #f8bbd0;
+    padding: 30px 20px;
+    width: 280px;
+    border-radius: 16px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .location-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+  }
+
+  .location-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+  }
+
+  .location-box h3 {
+    color: #c2185b;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4em;
+  }
+
+  .location-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .location-box li {
+    margin: 10px 0;
+  }
+
+  .location-box a {
+    color: #555;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .location-box a:hover {
+    color: #e91e63;
+  }
+
+  @media (max-width: 768px) {
+    .location-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>

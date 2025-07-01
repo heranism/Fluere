@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Graduation Flowers | Fleuré</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #fff; color: #333; }
+
+    .announcement-bar {
+      background: #c2185b; color: #fff; text-align: center;
+      padding: 10px; font-weight: bold;
+    }
+
+    nav {
+      background: rgba(206, 190, 168, .85); border-bottom: 1px solid #eee;
+      position: sticky; top: 0; z-index: 1000;
+    }
+    .nav-container {
+      max-width: 1200px; margin: auto; display: flex;
+      justify-content: space-between; align-items: center;
+      padding: 10px 20px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif; font-size: 1.5em; color: #c2185b;
+    }
+    .nav-links {
+      display: flex; gap: 25px; align-items: center;
+      position: relative;
+    }
+    .nav-links a {
+      font-weight: 600; color: #c2185b; text-decoration: none;
+      padding: 8px 0;
+    }
+    .nav-links a:hover { color: #e91e63; }
+
+    .dropdown {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .dropdown-menu {
+      position: absolute;
+      top: 35px;
+      left: 0;
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      display: none;
+      flex-direction: column;
+      min-width: 150px;
+      z-index: 999;
+    }
+    .dropdown-menu a {
+      padding: 10px 15px;
+      color: #c2185b;
+      text-decoration: none;
+      font-weight: 500;
+      text-align: left;
+    }
+    .dropdown-menu a:hover {
+      background: #fdf4f7;
+      color: #e91e63;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: flex;
+    }
+
+    .page-header {
+      background: url('https://images.contentstack.io/v3/assets/bltcedd8dbd5891265b/bltd4dc8471153a942b/6668df61ff717a13a1f44c3e/graduation-flowers-hero.jpg?q=70&width=3840&auto=webp') no-repeat center/cover;
+      height: 300px; display: flex; align-items: center; justify-content: center;
+      color: #fff; text-align: center;
+      position: relative;
+    }
+    .page-header::after {
+      content: ""; position: absolute; inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+    .page-header h1 {
+      position: relative; z-index: 1;
+      font-family: 'Playfair Display', serif; font-size: 3em;
+    }
+
+    .product-section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .product-grid {
+      display: flex; flex-wrap: wrap;
+      gap: 30px; justify-content: center;
+      margin-top: 30px;
+    }
+    .product-card {
+      flex: 1 1 250px;
+      background: #fdf4f7;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .product-card img {
+      width: 100%; height: 200px; object-fit: cover;
+    }
+    .product-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: #c2185b;
+      margin: 15px;
+    }
+    .product-card p {
+      color: #666;
+      margin: 0 15px 10px;
+      font-size: 0.95em;
+    }
+    .product-card .price {
+      margin: 0 15px 15px;
+      font-weight: 600;
+      color: #333;
+    }
+    .product-card button {
+      margin: 0 15px 20px;
+      padding: 10px 20px;
+      background: #ff8364;
+      border: none;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+    .product-card button:hover {
+      background: #ff5c3d;
+    }
+
+    footer {
+      padding: 40px 20px; background: #fff;
+    }
+    footer h3 {
+      font-family: 'Playfair Display', serif;
+      color: #c2185b;
+    }
+    footer ul {
+      list-style: none; padding: 0;
+    }
+    footer ul li a {
+      color: #c2185b; text-decoration: none;
+    }
+    footer p {
+      color: #666;
+    }
+    .footer-inner {
+      max-width: 1000px; margin: auto;
+      display: flex; flex-wrap: wrap;
+      gap: 40px; justify-content: space-between;
+    }
+    .footer-bottom {
+      text-align: center; color: #999;
+      font-size: 0.9em; margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .page-header h1 { font-size: 2.2em; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announcement-bar">
+    🎓 Congrats, Graduates! Celebrate your milestone with elegant blooms
+  </div>
+
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo">Fleuré</div>
+      <div class="nav-links">
+        <a href="Flowers.html">Flowers</a>
+    
+	      <div class="dropdown">
+        <a href="Sale.html" class="dropdown-toggle">Sale</a>
+        <div class="dropdown-menu">
+          <a href="7-7 sale.html">7.7 Sale</a>
+          <a href="Merdeka.html">Merdeka Sale</a>
+          <a href="Payday.html">Payday Sale</a>
+        </div>
+      </div>
+	      
+      <a href="Special.html">Special</a>
+      <div class="dropdown">
+  <a href="Occasion.html" class="dropdown-toggle">Occasion</a>  
+  <div class="dropdown-menu">
+    <a href="birthday.html">Birthday</a>
+    <a href="anniversary.html">Anniversary</a>
+    <a href="graduation.html">Graduation</a>
+    <a href="mother.html">Mother’s Day</a>
+  </div>
+</div>
+      <a href="Location.html">Location</a>
+      <a href="Order.html">Order</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>Graduation Flowers</h1>
+  </div>
+
+  <div class="product-section">
+    <p style="text-align: center; color: #666; font-size: 1.1em;">
+      Mark their achievement with blooms that shout “You did it!” 🎓✨
+    </p>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://onlyloveflorist.com/5743-thickbox_default/graduation-bouquet02.jpg" alt="Proud Petals">
+        <h3>Proud Petals</h3>
+        <p>Bright, bold, and full of success energy.</p>
+        <p class="price">RM120.00</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://www.joyceflorist.sg/cdn/shop/files/rn-image_picker_lib_temp_97410904-6753-408a-b83c-faf65ceb2407.jpg" alt="Academic Bloom">
+        <h3>Academic Bloom</h3>
+        <p>It is an honour for your hard work and triumph.</p>
+        <p class="price">RM135.00</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://www.sweetlifeandco.my/wp-content/uploads/2023/03/A123-Yara-Graduation-Flower-Bouquet-1.jpg" alt="Victory Vibes">
+        <h3>Victory Vibes</h3>
+        <p>Cheerful sunflowers and mixed fillers in a congratulatory bouquet.</p>
+        <p class="price">RM140.00</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner"></div>
+    <p class="footer-bottom">© 2025 Fleuré All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

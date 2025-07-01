@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fleuré - Sale</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .announcement-bar {
+      background: #c2185b; color: #fff; text-align: center;
+      padding: 10px; font-weight: bold;
+    }
+
+    header { padding: 20px; text-align: center; }
+    header h1 {
+      font-family: 'Playfair Display', serif; font-size: 2.5em; color: #c2185b;
+    }
+
+    header p { font-size: 1.1em; color: #666; }
+
+    .top-banner {
+      background-color: #c2185b;
+      color: #fff;
+      text-align: center;
+      padding: 8px 15px;
+      font-size: 0.9em;
+    }
+
+    nav {
+      background: rgba(206, 190, 168, .85); 
+      border-bottom: 1px solid #eee;
+      position: sticky;  
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      background-color: #f5e8dd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .navbar h1 {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8em;
+      color: #c2185b;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #c2185b;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95em;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+
+    .nav-links a:hover {
+      background: #fdf4f7;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 180px;
+      top: 40px;
+      left: 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 5px;
+      overflow: hidden;
+      z-index: 999;
+    }
+
+    .dropdown-content a {
+      color: #c2185b;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: 500;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #fdf4f7;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .sale-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .sale-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+      position: relative;
+    }
+
+    .sale-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .sale-image {
+      position: relative;
+    }
+
+    .sale-main-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .footer {
+      background: #f5e8dd;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      color: #777;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .hero { height: 350px; }
+      .hero .overlay h2 { font-size: 2em; }
+      .nav-links { display: none; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="top-banner">
+    🎉 Free card & photo + same-day delivery
+  </div>
+
+  <nav>
+    <div class="navbar">
+      <h1><a href="index.html" style="text-decoration: none; color: inherit;">Fleuré</a></h1>
+      <div class="nav-links">
+        <a class="button" href="Flowers.html">Flowers</a>
+
+        <div class="dropdown">
+          <a href="Sale.html" class="dropdown-toggle">Sale</a>
+          <div class="dropdown-content">
+            <a href="7-7 sale.html">7.7 Sale</a>
+            <a href="Merdeka.html">Merdeka Sale</a>
+            <a href="Payday.html">Payday Sale</a>
+          </div>
+        </div>
+
+        <a class="button" href="Special.html">Special</a>
+
+        <div class="dropdown">
+          <!-- Updated the href to correctly navigate to the "Occasion.html" page -->
+          <a href="Occasion.html" class="dropdown-toggle">Occasion</a>
+          <div class="dropdown-content">
+            <a href="birthday.html">Birthday</a>
+            <a href="anniversary.html">Anniversary</a>
+            <a href="graduation.html">Graduation</a>
+            <a href="mother.html">Mother’s Day</a>
+          </div>
+        </div>
+
+        <a class="button" href="Location.html">Location</a>
+        <a class="button" href="Order.html">Order</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <img src="https://images.pexels.com/photos/17635081/pexels-photo-17635081.jpeg" alt="Hero">
+    <div class="overlay">
+      <h2>Artisan flowers & gifts<br>for all occasions</h2>
+      <p>Celebrate Merdeka with blooms of joy! — valid till 31 August. Free same-day delivery </p>
+    </div>
+    <div class="rewards">
+      <span>F</span> Fleuré Rewards
+    </div>
+  </div>
+
+  <section>
+    <div class="sale-grid">
+      <!-- Product 1 -->
+      <div class="sale-card">
+        <div class="sale-image">
+          <img src="https://i.pinimg.com/736x/a3/d8/66/a3d866d9c1a7df0de777b876790011b5.jpg" alt="Bloom-deka" class="sale-main-img">
+        </div>
+
+        <div class="sale-content">
+          <h3>Bloom-deka</h3>
+          <div class="stars">★★★★★ 96 Reviews</div>
+          <div class="prices">
+            <span class="sale-price">RM161.10</span>
+            <span class="old-price">RM179</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="sale-card">
+        <div class="sale-image">
+          <img src="https://i.pinimg.com/736x/fc/a2/f9/fca2f9be69d81d9fea39c33dbfc8d25e.jpg" alt="Patriot Petals" class="sale-main-img">
+        </div>
+
+        <div class="sale-content">
+          <h3>Patriot Petals</h3>
+          <div class="stars">★★★★☆ 45 Reviews</div>
+          <div class="prices">
+            <span class="sale-price">RM170.00</span>
+            <span class="old-price">RM200</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="sale-card">
+        <div class="sale-image">
+          <img src="https://i.pinimg.com/736x/7d/38/05/7d380519869606f9e7aae1c76626cc66.jpg" alt="Wira Bloom" class="sale-main-img">
+        </div>
+
+        <div class="sale-content">
+          <h3>Wira Bloom</h3>
+          <div class="stars">★★★★★ 80 Reviews</div>
+          <div class="prices">
+            <span class="sale-price">RM135.00</span>
+            <span class="old-price">RM180</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="footer">
+    © 2025 Fleuré All rights reserved.
+  </div>
+
+</body>
+</html>
+
